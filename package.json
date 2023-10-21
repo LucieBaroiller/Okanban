@@ -1,0 +1,28 @@
+{
+  "name": "s06-okanban-blue",
+  "version": "1.0.0",
+  "description": "oKanban",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "db:tables": "psql -U okanban -d okanban -f data/create_tables.sql",
+    "db:seed": "psql -U okanban -d okanban -f data/seed_database.sql",
+    "db:reset": "npm run db:tables && npm run db:seed",
+    "dev": "nodemon index.js",
+    "kill": "npx kill-port 3000",
+    "test": "nodemon test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.1",
+    "express-rate-limit": "^6.8.0",
+    "pg": "^8.11.1",
+    "sanitize-html": "^2.11.0",
+    "sequelize": "^6.32.1"
+  }
+}
